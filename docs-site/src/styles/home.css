@@ -1,0 +1,9 @@
+/* On desktop the splash (home) page keeps its full-width layout: hide the sidebar enabled in routeData.ts. */
+@media (min-width: 72rem) {
+	:root[data-has-hero] .sidebar {
+		display: none;
+	}
+	:root[data-has-hero][data-has-sidebar] {
+		--sl-content-inline-start: 0rem;
+	}
+}

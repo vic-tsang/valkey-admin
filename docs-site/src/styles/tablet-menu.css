@@ -1,0 +1,36 @@
+/*
+ * Tablet: Starlight shows a permanent sidebar from 50rem up. Keep the mobile hamburger menu until the desktop
+ * layout at 72rem instead. These rules are unlayered, so they win over Starlight's layered styles.
+ */
+@media (min-width: 50rem) and (max-width: 71.99rem) {
+	starlight-menu-button button {
+		display: flex;
+	}
+
+	:root[data-has-sidebar] {
+		--sl-content-inline-start: 0rem;
+	}
+
+	:root[data-has-sidebar] .header {
+		padding-inline-end: calc(var(--sl-nav-gap) + var(--sl-nav-pad-x) + var(--sl-menu-button-size));
+	}
+
+	.sidebar-pane {
+		--sl-sidebar-visibility: hidden;
+		width: 100%;
+		background-color: var(--sl-color-black);
+		border-inline-end: 0;
+	}
+
+	starlight-menu-button[aria-expanded='true'] ~ .sidebar-pane {
+		--sl-sidebar-visibility: visible;
+	}
+
+	.sidebar-pane .md\:sl-hidden {
+		display: block;
+	}
+
+	[data-mobile-menu-expanded] {
+		overflow: hidden;
+	}
+}

@@ -19,6 +19,12 @@ export default defineConfig({
 				src: './src/assets/logo.png',
 			},
 			favicon: '/favicon.png',
+			customCss: ['./src/styles/home.css', './src/styles/tablet-menu.css'],
+			routeMiddleware: './src/routeData.ts',
+			components: {
+				Header: './src/components/Header.astro',
+				MobileMenuFooter: './src/components/MobileMenuFooter.astro',
+			},
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/valkey-io/valkey-admin' }],
 			sidebar: [
 				{
